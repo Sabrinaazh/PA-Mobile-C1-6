@@ -17,16 +17,14 @@ class _RegisState extends State<Regis> {
 
   final TextEditingController _ctrlEmail = TextEditingController();
   final TextEditingController _ctrlPassword = TextEditingController();
-  final TextEditingController _ctrlUsername = TextEditingController();
 
   handleSubmit() async {
     if (!_formKey.currentState!.validate()) return;
     final email = _ctrlEmail.value.text;
     final password = _ctrlPassword.value.text;
-    final username = _ctrlUsername.value.text;
 
     setState(() => _loading = true);
-    await Auth().regis(email, password, username);
+    await Auth().regis(email, password);
     setState(() => _loading = false);
   }
 
@@ -61,34 +59,6 @@ class _RegisState extends State<Regis> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Email',
-                    filled: true,
-                    hintStyle: GoogleFonts.inter(
-                        textStyle: TextStyle(
-                            color: Color.fromARGB(255, 170, 173, 246))),
-                    labelStyle: GoogleFonts.inter(
-                        textStyle: TextStyle(
-                            color: Color.fromARGB(255, 170, 173, 246))),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromARGB(255, 170, 173, 246)),
-                    ),
-                  ),
-                  style: GoogleFonts.inter(
-                      textStyle:
-                          TextStyle(color: Color.fromARGB(255, 170, 173, 246))),
-                ),
-                SizedBox(height: 25),
-                TextFormField(
-                  controller: _ctrlUsername,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Silakan Masukkan Username Anda';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Username',
                     filled: true,
                     hintStyle: GoogleFonts.inter(
                         textStyle: TextStyle(
