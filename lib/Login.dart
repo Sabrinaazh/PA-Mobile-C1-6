@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'login.png',
+                    'assets/login.png',
                     width: 350,
                     height: 350,
                   ),
@@ -161,15 +161,15 @@ class _LoginState extends State<Login> {
                             color: Color.fromARGB(255, 170, 173, 246))),
                   ),
                   SizedBox(height: 25),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(170, 5, 170, 5),
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 90, 83, 170),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: TextButton(
-                      onPressed: () => handleSubmit(),
+                  TextButton(
+                    onPressed: () => handleSubmit(),
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(170, 10, 170, 10),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 90, 83, 170),
+                          borderRadius: BorderRadius.circular(15)),
                       child: _loading
-                          ? const SizedBox(
+                          ? SizedBox(
                               width: 20,
                               height: 20,
                             )

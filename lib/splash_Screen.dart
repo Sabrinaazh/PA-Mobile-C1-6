@@ -24,7 +24,7 @@ class _splashscreenState extends State<splashscreen> {
                   textStyle: TextStyle(
                       fontSize: 45, color: Color.fromARGB(255, 90, 83, 170))),
             ),
-            Image(image: AssetImage("getstart.png")),
+            Image(image: AssetImage("assets/getstart.png")),
           ],
         ),
       ),

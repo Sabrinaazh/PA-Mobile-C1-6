@@ -76,7 +76,7 @@ class _IntroScreenState extends State<IntroScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'logo_meowpet.png',
+              'assets/logo_meowpet.png',
               width: 350,
               height: 350,
             ),
